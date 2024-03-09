@@ -9,9 +9,6 @@
     "editor.lineNumbers": "relative",
     "editor.linkedEditing": true,
     "editor.minimap.enabled": false,
-    "editor.rulers": [
-        80
-    ],
     "editor.suggest.insertMode": "replace",
     "editor.tabSize": 4,
     "explorer.confirmDelete": false,
@@ -26,15 +23,22 @@
     "tailwindCSS.emmetCompletions": true,
     // JavaScript
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.rulers": [
+            100
+        ]
+    },
     // Python
     "python.languageServer": "Pylance",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.autopep8"
+        "editor.defaultFormatter": "ms-python.autopep8",
+        "editor.rulers": [
+            80
+        ]
     },
     // JSON
     "json.format.enable": false,
     // Vim
-    // https://github.com/VSCodeVim/Vim/blob/HEAD/ROADMAP.md
     "vim.leader": "<Space>",
     "vim.hlsearch": true,
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -141,5 +145,5 @@
             "before": ["leader", "c"],
             "commands": ["editor.action.commentLine"]
         }
-    ]
+    ],
 }
