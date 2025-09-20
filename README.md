@@ -1,2 +1,2 @@
 # dot
-My personal dotfiles.
+My personal dotfiles, settings files, and apps I daily drive.
