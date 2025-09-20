@@ -145,5 +145,5 @@
             "before": ["leader", "c"],
             "commands": ["editor.action.commentLine"]
         }
-    ],
+    ]
 }
