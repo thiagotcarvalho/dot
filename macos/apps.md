@@ -8,6 +8,8 @@
 
 [Cursor](https://cursor.com/)
 
+[Ice App](https://icemenubar.app/)
+
 [iTerm2](https://iterm2.com/)
 
 [KeepingYouAwake](https://keepingyouawake.app/)
