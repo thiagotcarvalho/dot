@@ -1,4 +1,4 @@
-# MacOS Applications
+MacOS Applications
 
 ## Daily Drivers
 
@@ -8,9 +8,9 @@
 
 [Cursor](https://cursor.com/)
 
-[Ice App](https://icemenubar.app/)
+[Ghostty](https://ghostty.org/)
 
-[iTerm2](https://iterm2.com/)
+[Ice App](https://icemenubar.app/)
 
 [KeepingYouAwake](https://keepingyouawake.app/)
 
@@ -33,5 +33,7 @@
 [Firefox Browser](https://www.firefox.com/en-US/)
 
 [Spark Mail](https://sparkmailapp.com/)
+- If Notion Mail cannot be used.
 
 [Visual Studio Code](https://code.visualstudio.com/)
+- If Cursor or Neovim cannot be used.
