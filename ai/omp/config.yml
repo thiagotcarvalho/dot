@@ -7,7 +7,7 @@ modelRoles:
   designer: anthropic/claude-sonnet-5-5:high
   commit: "@smol"
   tiny: "@smol"
-  advisor: openai-codex/gpt-6-sol:high
+  advisor: openai-codex/gpt-6-sol:low
   task: openai-codex/gpt-6-sol:xhigh
   judge: anthropic/claude-haiku-5-5
 symbolPreset: nerd
@@ -20,6 +20,7 @@ advisor:
   enabled: true
   syncBacklog: "off"
   immuneTurns: 3
+  reviewMode: agent-end
 composer:
   shape: pi
 terminal:
@@ -35,11 +36,11 @@ task:
 retry:
   usageAwareFallback: true
   fallbackChains:
-    "anthropic/*":
+    anthropic/*:
       - openai-codex/gpt-6-sol
-    "openai-codex/*":
+    openai-codex/*:
       - anthropic/claude-sonnet-5-5
-    "anthropic/claude-haiku-5-5":
+    anthropic/claude-haiku-5-5:
       - openai-codex/gpt-6-luna
     judge:
       - openai-codex/gpt-6-luna
