@@ -14,8 +14,6 @@ symbolPreset: nerd
 theme:
   dark: titanium
 setupVersion: 2
-dev:
-  autoqaConsent: granted
 advisor:
   enabled: true
   syncBacklog: "off"
@@ -44,7 +42,3 @@ retry:
       - openai-codex/gpt-6-luna
     judge:
       - openai-codex/gpt-6-luna
-claudeResets:
-  autoRedeem: "yes"
-codexResets:
-  autoRedeem: "yes"

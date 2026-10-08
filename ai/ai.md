@@ -45,7 +45,8 @@ omp is the main coding agent. It uses Claude models and Codex models in differen
 - Opus 5.5 is the `default` and `plan` model. Sonnet 5.5 is the `vision` and `designer` model. GPT-6 models from Codex do the `task`, `advisor`, `smol`, and `slow` roles.
 - The `scout` and `sonic` subagents and the `judge` role use Claude Haiku 5.5.
 - The config tells omp to continue the work on the other provider when one provider reaches its usage limit.
-- The config tells omp to spend a saved Claude or Codex reset automatically.
+- My config sets omp to spend a saved Claude or Codex reset without a prompt. This copy leaves out both settings, so omp asks before it spends a reset for the first time.
+- This copy leaves out my Auto QA consent, so omp asks each new user before it sends a tool issue report.
 
 >Roles are subject to change.
 
