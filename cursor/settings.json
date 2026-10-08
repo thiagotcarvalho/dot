@@ -1,0 +1,18 @@
+{
+    "window.autoDetectColorScheme": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.detectWorktrees": true,
+    "claudeCode.preferredLocation": "panel",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "git.openRepositoryInParentFolders": "always",
+    // Python
+    "python.languageServer": "None",
+    "[python]": {
+        "editor.rulers": [
+            100
+        ]
+    },
+}
