@@ -1,5 +1,6 @@
-# MacOS Applications
-Apps used on a daily basis.
+# macOS Applications
+
+This file lists the apps that I use every day.
 
 ## Daily Drivers
 
@@ -10,8 +11,6 @@ Apps used on a daily basis.
 [Codex](https://openai.com/codex/)
 
 [Cold Turkey Blocker](https://getcoldturkey.com/)
-
-[CotEditor](https://coteditor.com/)
 
 [Cursor](https://cursor.com/)
 
@@ -39,6 +38,8 @@ Apps used on a daily basis.
 
 [Spotify](https://open.spotify.com/)
 
+[TextMate](https://macromates.com/)
+
 ## Alternatives
 
 [Firefox Browser](https://www.firefox.com/en-US/)
@@ -46,7 +47,9 @@ Apps used on a daily basis.
 [Ice App](https://icemenubar.app/)
 
 [Spark Mail](https://sparkmailapp.com/)
+
 - If Notion Mail cannot be used.
 
 [Visual Studio Code](https://code.visualstudio.com/)
+
 - If Cursor or Neovim cannot be used.
