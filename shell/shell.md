@@ -42,6 +42,15 @@ Ghostty is the terminal app that runs the shell.
 
 - It sets the Japanesque theme.
 
+## Homebrew
+
+[website](https://brew.sh/)
+
+Homebrew is the package manager that installs most of the tools in this file.
+
+- `.zprofile` adds Homebrew to the `PATH` with `brew shellenv`. `.zshrc` loads powerlevel10k, zsh-autosuggestions, and zsh-syntax-highlighting from the Homebrew folder.
+- The [Brewfile](../macos/Brewfile) lists the tools that Homebrew installs. The Homebrew section of [macos.md](../macos/macos.md) explains how to run the Brewfile.
+
 ## lazyvim
 
 [website](https://www.lazyvim.org/)
