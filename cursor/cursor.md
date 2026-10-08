@@ -12,11 +12,9 @@ Cursor is the code editor that I use every day.
 
 [settings.json](settings.json): `~/Library/Application Support/Cursor/User/settings.json`
 
-- It makes the color scheme follow the system. It also sets the chat chime, git, the file explorer prompts, the Claude Code panel, and Python. This copy leaves out the remote SSH hosts.
+- It makes the color scheme follow the system. It also sets the chat chime, git, the file explorer prompts, and Python. This copy leaves out the remote SSH hosts.
 
 ### Cursor Extensions
-
-[Claude Code for VS Code](https://open-vsx.org/extension/Anthropic/claude-code)
 
 [Container Tools](https://open-vsx.org/extension/ms-azuretools/vscode-containers)
 
