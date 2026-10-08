@@ -16,6 +16,8 @@ Cursor is the code editor that I use every day.
 
 ### Cursor Extensions
 
+From the repo root, `brew bundle --file=macos/Brewfile` installs these extensions and the other Brewfile items.
+
 [Container Tools](https://open-vsx.org/extension/ms-azuretools/vscode-containers)
 
 [Docker](https://open-vsx.org/extension/ms-azuretools/vscode-docker)
