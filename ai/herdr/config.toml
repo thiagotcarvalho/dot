@@ -1,0 +1,45 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+previous_workspace = "prefix+p"
+next_workspace = "prefix+n"
+previous_tab = "prefix+shift+p"
+next_tab = "prefix+shift+n"
+
+[[keys.command]]
+key = "prefix+f"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer"
+description = "open file viewer in split"
+
+[[keys.command]]
+key = "prefix+shift+f"
+type = "plugin_action"
+command = "herdr-file-viewer.open-file-viewer-tab"
+description = "open file viewer in tab"
+
+[[keys.command]]
+key = "prefix+r"
+type = "plugin_action"
+command = "persiyanov.reviewr.toggle"
+
+[[keys.command]]
+key = "prefix+m"
+type = "plugin_action"
+command = "ray.plugin-manager.open"
+description = "open plugin manager"
+
+[theme]
+name = "one-dark"
+auto_switch = false
+
+[ui.toast]
+delivery = "terminal"
+
+[ui]
+agent_panel_sort = "spaces"
+show_agent_labels_on_pane_borders = false
+
+
+status_indicators = "symbols"

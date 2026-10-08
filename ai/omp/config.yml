@@ -1,0 +1,49 @@
+modelRoles:
+  smol: openai-codex/gpt-6-luna:low
+  plan: anthropic/claude-opus-5-5:max
+  slow: openai-codex/gpt-6-astra:max
+  default: anthropic/claude-opus-5-5:xhigh
+  vision: anthropic/claude-sonnet-5-5:high
+  designer: anthropic/claude-sonnet-5-5:high
+  commit: "@smol"
+  tiny: "@smol"
+  advisor: openai-codex/gpt-6-sol:high
+  task: openai-codex/gpt-6-sol:xhigh
+  judge: anthropic/claude-haiku-5-5
+symbolPreset: nerd
+theme:
+  dark: titanium
+setupVersion: 2
+dev:
+  autoqaConsent: granted
+advisor:
+  enabled: true
+  syncBacklog: "off"
+  immuneTurns: 3
+composer:
+  shape: pi
+terminal:
+  showProgress: false
+display:
+  showTokenUsage: true
+memory:
+  backend: local
+task:
+  agentModelOverrides:
+    scout: anthropic/claude-haiku-5-5
+    sonic: anthropic/claude-haiku-5-5
+retry:
+  usageAwareFallback: true
+  fallbackChains:
+    "anthropic/*":
+      - openai-codex/gpt-6-sol
+    "openai-codex/*":
+      - anthropic/claude-sonnet-5-5
+    "anthropic/claude-haiku-5-5":
+      - openai-codex/gpt-6-luna
+    judge:
+      - openai-codex/gpt-6-luna
+claudeResets:
+  autoRedeem: "yes"
+codexResets:
+  autoRedeem: "yes"
