@@ -128,7 +128,7 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 [adversarial-code-review](skills/adversarial-code-review/SKILL.md)
 
-- A second agent reviews local changes, read-only, in a herdr pane.
+- A second agent reviews local changes, read-only, in a herdr pane. GPT-6.1 Sol is the default reviewer. When 60% or more of the Codex 5-hour window is used, the review moves to a Claude model, unless the user names a Codex model and confirms it.
 
 [frankenstein](skills/frankenstein/SKILL.md)
 
