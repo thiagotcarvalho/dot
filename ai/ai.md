@@ -48,6 +48,10 @@ omp is the main coding agent. It uses Claude models and Codex models in differen
 - My config sets omp to spend a saved Claude or Codex reset without a prompt. This copy leaves out both settings, so omp asks before it spends a reset for the first time.
 - This copy leaves out my Auto QA consent, so omp asks each new user before it sends a tool issue report.
 
+[WATCHDOG.md](omp/WATCHDOG.md): `~/.omp/agent/WATCHDOG.md`
+
+- It gives the omp Advisor a process-only job. The Advisor reports ignored instructions, a wrong direction, a claim without proof, and broken rules. The adversarial-code-review skill reviews the diff.
+
 >Roles are subject to change.
 
 ### omp Plugins
