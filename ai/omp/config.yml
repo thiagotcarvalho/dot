@@ -7,8 +7,8 @@ modelRoles:
   designer: anthropic/claude-sonnet-5-5:high
   commit: "@smol"
   tiny: "@smol"
-  advisor: openai-codex/gpt-6-sol:low
-  task: openai-codex/gpt-6-sol:xhigh
+  advisor: openai-codex/gpt-6.1-sol:low
+  task: openai-codex/gpt-6.1-sol:xhigh
   judge: anthropic/claude-haiku-5-5
 symbolPreset: nerd
 theme:
@@ -31,6 +31,7 @@ task:
   agentModelOverrides:
     scout: anthropic/claude-haiku-5-5
     sonic: anthropic/claude-haiku-5-5
+    reviewer: openai-codex/gpt-6.1-sol:high
 retry:
   usageAwareFallback: true
   fallbackChains:
