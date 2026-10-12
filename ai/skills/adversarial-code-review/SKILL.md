@@ -1,6 +1,6 @@
 ---
 name: adversarial-code-review
-description: Run an adversarial code review of local changes with a second coding agent in a split Herdr pane. The reviewer runs read-only and is either Codex or Claude. The model is selectable by alias (GPT-6-Astra, GPT-6.1-Sol, Opus-5.5, Fable-5.1) or by explicit model id. It reviews the working-tree diff by default, or an explicit diff file. Use when the user asks for an adversarial code review, a second-model review, a red-team review of a diff, or to review changes with Codex or Claude in a Herdr split pane before commit.
+description: Run an adversarial code review of local changes with a second coding agent in a split Herdr pane. The reviewer runs read-only and is either Codex or Claude. The model is selectable by alias (GPT-6-Astra, GPT-6.1-Sol, Sonnet-5.5, Opus-5.5, Fable-5.1) or by explicit model id. It reviews the working-tree diff by default, or an explicit diff file. Use when the user asks for an adversarial code review, a second-model review, a red-team review of a diff, or to review changes with Codex or Claude in a Herdr split pane before commit.
 ---
 
 # Adversarial Code Review
@@ -22,12 +22,13 @@ Resolve the reviewer from this alias table. `GPT-6.1-Sol` is the default. The
 reviewer kind must be `codex` or `claude`, because only these have a read-only
 mode defined here.
 
-| Alias       | Kind   | Model id (after `--model`) | When to use it                                                                            |
-| ----------- | ------ | -------------------------- | ----------------------------------------------------------------------------------------- |
-| GPT-6.1-Sol | codex  | `gpt-6.1-sol`              | This is the default. A Claude model wrote the diff, and the Codex window has room.         |
-| GPT-6-Astra | codex  | `gpt-6-astra`              | Only when the user names it. It costs 5 to 10 times more than GPT-6.1-Sol.                 |
-| Opus-5.5    | claude | `claude-opus-5-5`          | A Codex model wrote the diff. Or the Codex window has no room, and Opus 5.5 did not write the diff. |
-| Fable-5.1   | claude | `claude-fable-5-1`         | The Codex window has no room, and Opus 5.5 wrote the diff.                                 |
+| Alias       | Kind   | Model id (after `--model`) | When to use it                                                                                        |
+| ----------- | ------ | -------------------------- | ----------------------------------------------------------------------------------------------------- |
+| GPT-6.1-Sol | codex  | `gpt-6.1-sol`              | This is the default. A Claude model wrote the diff, and the Codex window has room.                    |
+| GPT-6-Astra | codex  | `gpt-6-astra`              | Only when the user names it. It costs 5 to 10 times more than GPT-6.1-Sol.                            |
+| Sonnet-5.5  | claude | `claude-sonnet-5-5`        | A Codex model wrote the diff. Or the Codex window has no room, and Sonnet 5.5 did not write the diff. |
+| Opus-5.5    | claude | `claude-opus-5-5`          | The Codex window has no room, and Sonnet 5.5 wrote the diff.                                          |
+| Fable-5.1   | claude | `claude-fable-5-1`         | Only when the user names it. Its input and output cost 5 times more than Sonnet-5.5.                  |
 
 All Codex models share one 5-hour limit. A different Codex model does not move
 the review to a different quota. It only changes the cost. The budget check in
@@ -39,9 +40,10 @@ Selection rules:
 1. If the user names an alias or a model id, use it. If its kind is codex and
    `CODEX_ROOM=no`, tell the user, and run it only when the user confirms.
 2. If the user names no model, test the "When to use it" cases in this order:
-   Fable-5.1, Opus-5.5. Use the first row whose case matches. If no case
+   Opus-5.5, Sonnet-5.5. Use the first row whose case matches. If no case
    matches, use GPT-6.1-Sol. The author is usually the agent that runs this
-   skill.
+   skill. When omp reaches the Codex limit, it sends Codex work to Sonnet 5.5,
+   so a Sonnet 5.5 subagent can also be the author.
 3. Always pass `--model`. Set `MODEL` to the model id of the row, or to the
    explicit model id that the user names, for kind `codex` or `claude` only.
    Reject any other kind. The local codex default does not select the reviewer.
@@ -49,7 +51,9 @@ Selection rules:
 
 The cases choose a reviewer from a different vendor than the author when one
 can run. Otherwise, they choose a different model from the author. A reviewer
-that uses the same model can miss the same defects.
+that uses the same model can miss the same defects. Among the Claude models,
+the cases choose Sonnet-5.5, which has the same list price as GPT-6.1-Sol.
+Opus-5.5 costs twice as much, so it runs only when Sonnet 5.5 wrote the diff.
 
 Both `codex` and `claude` accept the long flag `--model <id>`, passed after `--`.
 
@@ -375,9 +379,9 @@ coverage. Handle those out of band when a change needs them.
   `--sandbox workspace-write` for that review only.
 - The skill always passes `--model`. The local codex config sets
   `model = "gpt-6-astra"`, and that default does not select the reviewer.
-- For Claude, the short aliases `fable` and `opus` select the latest model and
-  survive version bumps. Replace the pinned ids with `fable` or `opus` if you
-  prefer auto-latest.
+- For Claude, the short aliases `sonnet`, `opus`, and `fable` select the latest
+  model and survive version bumps. Replace the pinned ids with these aliases if
+  you prefer auto-latest.
 - The prompt line that forbids the reviewer from running this skill is necessary.
   Do not remove it. `~/.codex/AGENTS.md` points the reviewer at
   `~/Developer/vault_name/brain/rules/`. The `review-before-commit` rule tells any
