@@ -13,7 +13,7 @@
       "Bash(gh search:*)"
     ]
   },
-  "model": "fable",
+  "model": "claude-fable-5-2",
   "skillOverrides": {
     "find-skills": "off",
     "google-workspace": "off",

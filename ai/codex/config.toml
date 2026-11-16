@@ -32,9 +32,6 @@ enabled = false
 [plugins."computer-use@openai-bundled"]
 enabled = false
 
-[plugins."code-review@openai-bundled"]
-enabled = true
-
 [features]
 hooks = true
 js_repl = false
@@ -45,3 +42,5 @@ ambient-suggestions-enabled = false
 mac-menu-bar-enabled = false
 followUpQueueMode = "queue"
 dock-icon-preference = "codex-system"
+selected-avatar-id = "rocky"
+avatar-overlay-mascot-width-px = 92

@@ -2,7 +2,6 @@ modelRoles:
   smol: openai-codex/gpt-6-luna:low
   plan: anthropic/claude-opus-5-5:max
   slow: openai-codex/gpt-6-astra:max
-  default: anthropic/claude-opus-5-5:xhigh
   vision: anthropic/claude-sonnet-5-5:high
   designer: anthropic/claude-sonnet-5-5:high
   commit: "@smol"
@@ -13,7 +12,7 @@ modelRoles:
 symbolPreset: nerd
 theme:
   dark: titanium
-setupVersion: 2
+setupVersion: 3
 advisor:
   enabled: true
   syncBacklog: "off"
@@ -43,3 +42,5 @@ retry:
       - openai-codex/gpt-6-luna
     judge:
       - openai-codex/gpt-6-luna
+update:
+  auto: true
