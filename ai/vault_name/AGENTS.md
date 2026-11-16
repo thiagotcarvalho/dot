@@ -13,7 +13,7 @@ This file provides guidance to AI systems working in this workspace. It is the c
 `~/Developer/vault_name` is an Obsidian vault that holds three parts, kept deliberately separate: the brain, the spine, and the arms.
 
 - **[brain/](brain/README.md)**: how agents *behave*. Authored [rules](brain/rules/) (standards agents are held to) and accreted [memory](brain/memory/MEMORY.md) (facts agents have learned). This is the stable identity layer, not tied to any one ticket.
-- **[spine/](spine/README.md)**: what agents *produce and interact with*. All agent work-product: plans, architecture, discovery notes, runbooks, scratch analysis. Prefer Markdown and `[[wikilinks]]`, since this is an Obsidian vault.
+- **[spine/](spine/README.md)**: what agents *produce and interact with*. All agent work-product: plans, architecture, discovery notes, runbooks, scratch analysis. Use relative Markdown links so GitHub renders them.
 - **[arms/task-queue/](arms/task-queue/README.md)**: the *arms*, the task queue. It holds one task for each unit of work, in `Now`, `Next`, `Waiting`, and `Done`. Each task links its context, usually a scope in the spine. The task itself holds the next action, the status, and the evidence.
 
 ## The Brain

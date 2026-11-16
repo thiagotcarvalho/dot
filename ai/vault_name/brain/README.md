@@ -20,7 +20,7 @@ The rules describe the life of one unit of work:
 4. **Build it.** Write code to the code standards.
 5. **Write it.** Write notes and messages to the prose standards.
 6. **Prove it.** Prove the change where it runs. Get an adversarial review from another agent.
-7. **Hand it off.** Give the work to the user with a commit subject. The user decides each outward action, and an agent acts only after an explicit go.
+7. **Hand it off.** Keep each pull request small, and make each stack tell one story. Give the work to the user with a commit subject. The user decides each outward action, and an agent acts only after an explicit go.
 
 Two boundaries hold at every step. Each outward action waits for an explicit go. The vault stays out of every repo.
 
@@ -43,7 +43,7 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | 3. Design it | [solid-principles](rules/solid-principles.md) | One reason to change; extend without edits; a port where a fake or a second adapter exists |
 | 3. Design it | [guarded-writes](rules/guarded-writes.md) | Dry run first; write only a proven change to exactly one target |
 | 4. Build it | [ponytail-baseline](rules/ponytail-baseline.md) | Write code through the ponytail skill; simplicity always wins |
-| 4. Build it | [code-style](rules/code-style.md) | Google pyguide; self-documenting names, one case per test |
+| 4. Build it | [code-style](rules/code-style.md) | Google pyguide; self-documenting names, one case per test, tests assert behavior and never message text |
 | 4. Build it | [flat-is-better-than-nested](rules/flat-is-better-than-nested.md) | Max 1-2 levels of nesting per function; refactor deeper code |
 | 4. Build it | [comments-and-docstrings](rules/comments-and-docstrings.md) | Google pyguide §3.8, minimal, explain why not what |
 | 5. Write it | [writing-style](rules/writing-style.md) | Fewer em-dashes, plain tone, no hard-wrapped prose, TOC on docs |
@@ -52,7 +52,8 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | 6. Prove it | [prove-it-where-it-runs](rules/prove-it-where-it-runs.md) | A check proves only what it ran, on the host where it ran |
 | 6. Prove it | [review-before-commit](rules/review-before-commit.md) | Adversarial review by another agent gates every commit |
 | 6. Prove it | [pr-reviews-to-terminal](rules/pr-reviews-to-terminal.md) | Deliver reviews in chat, never as a saved file |
-| 7. Hand it off | [git-conventions](rules/git-conventions.md) | Never commit/push; no AI attribution; short subjects |
+| 7. Hand it off | [git-conventions](rules/git-conventions.md) | Never commit/push; no AI attribution; short subjects; `<repo>-wt-<topic>` worktrees |
+| 7. Hand it off | [pull-request-size](rules/pull-request-size.md) | At most 400 new lines per PR; a stack holds at most 10 PRs and tells one story; a short description in the template's sections |
 
 A rule can end with a Why section. It has one or two sentences in this shape: "The user wanted this rule because <reason> on <date>." When only one bullet has a recorded reason, name that bullet in place of "this rule". Put incident detail in the task records and the spine, not in the rule.
 

@@ -88,4 +88,4 @@ Do not invent a per-scope tracker file (`todos.md`, `checklist.md`, `backlog.md`
 - **Create it lazily**, when a real unknown appears. An empty file is noise.
 - **No table of contents.** This file is exempt from the TOC rule in [writing-style](../brain/rules/writing-style.md).
 - **Scope-local only.** There is no global open-questions file.
-- **Link to it path-qualified**, as `[[<repo>/<scope>/open-questions|open questions]]`. Every scope has a file by this name, so a bare `[[open-questions]]` is ambiguous across the vault.
+- **Use a path-qualified link.** Include `<repo>/<scope>/open-questions.md` in the relative Markdown target. Every scope has this file name, so a bare name is ambiguous.

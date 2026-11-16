@@ -31,7 +31,8 @@ Auto-loaded every session. This is the index of the [brain](../README.md): **rul
 - [Prove it where it runs](../rules/prove-it-where-it-runs.md) — a check proves only what it ran, on the host where it ran; a manual run does not prove a schedule
 - [Review before commit](../rules/review-before-commit.md) — adversarial review by another agent gates every commit
 - [PR reviews to terminal](../rules/pr-reviews-to-terminal.md) — deliver reviews in chat, not a saved file
-- [Git conventions](../rules/git-conventions.md) — never commit/push; no AI attribution; ≤50-char subjects; no commit body
+- [Git conventions](../rules/git-conventions.md) — never commit/push; no AI attribution; ≤50-char subjects; no commit body; name each new worktree `<repo>-wt-<topic>`
+- [Pull request size](../rules/pull-request-size.md) — at most 400 lines of new code per PR (tests count; deletions, docs, and config do not); a stack holds at most 10 PRs, tells one story, and never deletes or rewrites its own code
 
 ## Memory
 > Learned facts
