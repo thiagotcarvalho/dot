@@ -139,6 +139,14 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 - It loads the vault: the brain, the spine, and the arms.
 
+[recap](skills/recap/SKILL.md)
+
+- `/recap` summarizes the most recent work of the session in one paragraph.
+
+[review-names-and-comments](skills/review-names-and-comments/SKILL.md)
+
+- It reviews names, comments, docstrings, and test names against the rules in the vault. The review-python-code skill uses it for those checks.
+
 ### Altered Skills
 
 [ponytail](skills/ponytail/SKILL.md), [ponytail-audit](skills/ponytail-audit/SKILL.md), [ponytail-debt](skills/ponytail-debt/SKILL.md), [ponytail-review](skills/ponytail-review/SKILL.md)

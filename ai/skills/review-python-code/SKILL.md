@@ -1,6 +1,6 @@
 ---
 name: review-python-code
-description: Reviews Python code against the house standard — type hints, async correctness, exception chaining, mutable defaults, naming, comment discipline, and logging safety. Applies a false-positive screen and a Critical/Important/Minor verdict before reporting. Use when reviewing .py files or a Python diff, or before handing Python work off for commit.
+description: Reviews Python code against the house standard — type hints, async correctness, exception chaining, mutable defaults, and logging safety. Applies a false-positive screen and a Critical/Important/Minor verdict before reporting. Use when reviewing .py files or a Python diff, or before handing Python work off for commit.
 ---
 
 # Review Python Code
@@ -9,7 +9,7 @@ This skill adapts `python-code-review` and `review-verification-protocol` from [
 
 Formatting is out of scope. The repository formatter owns indentation, line length, blank lines, and import order. Never report a finding that the formatter rewrites on the next run.
 
-`~/Developer/vault_name/brain/rules/` holds the authoritative house standard. [references/house-rules.md](references/house-rules.md) restates that standard, so this skill needs no file outside itself.
+`~/Developer/vault_name/brain/rules/` holds the authoritative house standard. [references/house-rules.md](references/house-rules.md) restates its logging and duplication parts. **REQUIRED SUB-SKILL:** Use `review-names-and-comments` for names, comments, docstrings, and tests. That skill reads the rules directly.
 
 ## Quick Reference
 
@@ -21,7 +21,8 @@ Load a reference when the column on the left describes the code in front of you.
 | Blocking calls in async, missing `await` | [references/async-patterns.md](references/async-patterns.md) |
 | Bare `except`, swallowed errors, lost context | [references/error-handling.md](references/error-handling.md) |
 | Mutable defaults, magic numbers, deep nesting | [references/common-mistakes.md](references/common-mistakes.md) |
-| Names, comments, docstrings, logging safety | [references/house-rules.md](references/house-rules.md) |
+| Duplicated knowledge, logging safety | [references/house-rules.md](references/house-rules.md) |
+| Names, comments, docstrings, tests | The [review-names-and-comments](../review-names-and-comments/SKILL.md) skill |
 | False-positive screen, severity, verdict | [references/verification.md](references/verification.md) |
 
 ## Review Checklist
@@ -46,12 +47,10 @@ Load a reference when the column on the left describes the code in front of you.
 - [ ] No mutable default argument exists.
 - [ ] A magic number has a named constant.
 - [ ] An early return replaces a deep `if` pyramid.
+- [ ] No name shadows a builtin, such as `id`, `type`, or `list`.
 
 ### House rules
-- [ ] A name carries no abbreviation, and a name is not a sentence.
-- [ ] One test covers one case.
-- [ ] A comment states why. It never repeats the code.
-- [ ] No comment cites a ticket, a plan phase, or an internal identifier.
+- [ ] The `review-names-and-comments` skill ran on the same scope, and its findings join this review.
 - [ ] No log statement carries a sensitive field.
 
 ## Valid Patterns — Never Flag These
@@ -62,7 +61,6 @@ Load a reference when the column on the left describes the code in front of you.
 - `Any` at an untyped library boundary. The external package supplies no stubs.
 - An empty `__init__.py`. The file declares a package, and it needs no code.
 - A `noqa` comment. The suppressed rule does not apply to that line.
-- An absent docstring on a short or private function. The house default is no docstring.
 
 ## Observations, Not Defects
 

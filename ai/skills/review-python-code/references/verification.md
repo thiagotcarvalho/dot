@@ -34,7 +34,7 @@ One ladder. It matches the ladder that `requesting-code-review` uses, so the two
 
 **Important.** A logic defect that changes behaviour. A missing validation with no upstream cover. A lost exception chain. A mutable default argument. A blocking call inside `async def`.
 
-**Minor.** A missing type hint. A magic number. A comment that repeats the code. A name that shadows a builtin. A test that covers several cases.
+**Minor.** A missing type hint. A magic number. A name that shadows a builtin. Each finding from the `review-names-and-comments` skill.
 
 **Observation.** Everything in the "Observations, Not Defects" section of `SKILL.md`, plus any suggestion that asks for a new module, a new dependency, or an abstraction that does not exist yet. An observation never enters the actionable count, and it never affects the verdict.
 
@@ -42,7 +42,6 @@ One ladder. It matches the ladder that `requesting-code-review` uses, so the two
 
 - A style preference where both forms are correct.
 - Anything the formatter rewrites: indentation, line length, blank lines, whitespace, import order.
-- A missing docstring on a short or private function.
 - Test code held to production standards. A test is deliberately plainer.
 - Generated code, vendored code, or a dependency's internals.
 - A hypothetical defect that needs an unlikely precondition.
