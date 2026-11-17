@@ -134,6 +134,7 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 [adversarial-code-review](skills/adversarial-code-review/SKILL.md)
 
 - A second agent reviews local changes, read-only, in a herdr pane. GPT-6.1 Sol is the default reviewer. When 60% or more of the Codex 5-hour window is used, the review moves to a Claude model, unless the user names a Codex model and confirms it.
+- The reviewer pane opens to the right on a landscape monitor and below on a portrait monitor. [split-direction.js](skills/adversarial-code-review/scripts/split-direction.js) finds the monitor of the Ghostty window that runs herdr. It needs the macOS Automation permission for Ghostty and System Events, and the Accessibility permission.
 
 [frankenstein](skills/frankenstein/SKILL.md)
 

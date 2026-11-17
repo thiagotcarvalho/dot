@@ -178,11 +178,26 @@ Run the capture with `set -o pipefail`.
    parts.
 
 3. Split a sibling pane at the repository root and capture the new pane id from
-   `.result.pane.pane_id`:
+   `.result.pane.pane_id`. Split to the right on a landscape monitor, and down on
+   a portrait monitor. Herdr does not report the monitor, so
+   [scripts/split-direction.js](scripts/split-direction.js) finds the Ghostty
+   window that shows the Herdr client and reads the orientation of its screen.
+   The script needs the macOS Automation permission for Ghostty and System
+   Events, and the Accessibility permission. The first run can show a prompt.
+
+   When the script fails, the command uses the shape of the tab area in cells.
+   A cell is about twice as tall as it is wide, so an area at least twice as wide
+   as tall counts as landscape. The command prints a warning in this case.
 
    ```bash
    [ -n "$MODEL" ] || { echo "MODEL is empty; resolve the reviewer first" >&2; exit 1; }
-   PANE_ID="$(herdr pane split --current --direction right --cwd "$REPO_ROOT" \
+   DIRECTION="$(osascript -l JavaScript ~/.agents/skills/adversarial-code-review/scripts/split-direction.js)" || {
+     DIRECTION="$(herdr pane layout --current |
+       jq -r '.result.layout.area | if .width >= 2 * .height then "right" else "down" end')"
+     echo "The monitor is unknown, so the split follows the tab shape: $DIRECTION" >&2
+   }
+   [ -n "$DIRECTION" ] || { echo "Herdr reported no tab area" >&2; exit 1; }
+   PANE_ID="$(herdr pane split --current --direction "$DIRECTION" --cwd "$REPO_ROOT" \
      --no-focus | jq -r '.result.pane.pane_id')"
    ```
 
