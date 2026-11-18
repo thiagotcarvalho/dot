@@ -12,7 +12,7 @@ Auto-loaded every session. This is the index of the [brain](../README.md): **rul
 - [Explicit go for outward actions](../rules/explicit-go-for-outward-actions.md) — "draft" means draft; posts, commits, deploys, production writes, and shared settings each need their own explicit go
 - [Vault is not a repo](../rules/vault-is-not-a-repo.md) — personal vault, untracked; never referenced from any repo
 - [Vault file layout](../rules/vault-file-layout.md) — keep images and HTML pages in `diagram/` and code files in `scripts/`; back up before a destructive change, because the vault has no version control
-- [Skills are tools](../rules/skills-are-tools.md) — install skills by copy, trimmed and checked; a skill must not collide with a rule
+- [Skills bring methods](../rules/skills-bring-methods.md) — the rules keep authority over each skill; boundaries, process gates, and defaults; a `LOCAL.md` overlay on each installed skill
 - [Work tracking](../rules/work-tracking.md) — the task queue in arms/task-queue is the arms; each task links its context, usually a scope; it replaces per-scope backlog.md
 - [State the problem](../rules/state-the-problem.md) — problem + success criteria before the solution
 - [Current state wins](../rules/current-state-wins.md) — verify remembered facts against the repo and the running system; correct stale notes in place
@@ -24,6 +24,7 @@ Auto-loaded every session. This is the index of the [brain](../README.md): **rul
 - [Ponytail baseline](../rules/ponytail-baseline.md) — write code through the ponytail skill; simplicity always wins
 - [Code style](../rules/code-style.md) — Google pyguide; self-documenting names, one case per test
 - [Flat is better than nested](../rules/flat-is-better-than-nested.md) — max 1-2 levels of nesting per function; refactor deeper code
+- [Authored skills](../rules/authored-skills.md) — own skills stand alone; an umbrella skill runs them; shared parts in a shared folder; headless agents with `--watch`; core examples
 - [Comments and docstrings](../rules/comments-and-docstrings.md) — Google pyguide §3.8, minimal, why not what; plus the nine Stack Overflow rules
 - [Writing style](../rules/writing-style.md) — fewer em-dashes, plain tone, no hard-wrapped prose, TOC on docs, let diagrams carry the explanation
 - [Simplified Technical English](../rules/simplified-technical-english.md) — ASD-STE100 for all prose: short sentences, active voice, one meaning per word

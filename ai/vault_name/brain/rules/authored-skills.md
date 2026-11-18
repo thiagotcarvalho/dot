@@ -6,7 +6,7 @@ created: 2026-11-18
 ---
 # Write Skills That Stand Alone
 
-This rule covers each skill that the user authors in `~/.agents/skills/`. [skills-are-tools](skills-are-tools.md) covers the skills of other authors.
+This rule covers each skill that the user authors in `~/.agents/skills/`. [skills-bring-methods](skills-bring-methods.md) covers the skills of other authors.
 
 ## The Rules
 
@@ -31,4 +31,4 @@ The user wanted this rule because `adversarial-code-review` had become both an u
 
 ## Related
 
-[skills-are-tools](skills-are-tools.md) · dot-mirror · [keep-it-simple-stupid](keep-it-simple-stupid.md) · [review-before-commit](review-before-commit.md)
+[skills-bring-methods](skills-bring-methods.md) · dot-mirror · [keep-it-simple-stupid](keep-it-simple-stupid.md) · [review-before-commit](review-before-commit.md)

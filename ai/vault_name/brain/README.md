@@ -33,7 +33,7 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | Always | [explicit-go-for-outward-actions](rules/explicit-go-for-outward-actions.md) | Draft, then wait for an explicit go before any outward action |
 | Always | [vault-is-not-a-repo](rules/vault-is-not-a-repo.md) | Personal vault, untracked; never referenced from any repo |
 | Always | [vault-file-layout](rules/vault-file-layout.md) | Images and HTML pages in diagram/, code in scripts/; no version control, so back up before a destructive change |
-| Always | [skills-are-tools](rules/skills-are-tools.md) | Install skills by copy, trimmed and checked; a skill must not collide with a rule |
+| Always | [skills-bring-methods](rules/skills-bring-methods.md) | A skill brings a method; the rules keep authority; boundaries, process gates, and defaults; a `LOCAL.md` overlay on each installed skill |
 | 1. Take the work | [work-tracking](rules/work-tracking.md) | The task queue is the arms; each task links its context, usually a scope |
 | 2. Understand it | [state-the-problem](rules/state-the-problem.md) | State the problem and success criteria before designing the solution |
 | 2. Understand it | [current-state-wins](rules/current-state-wins.md) | Verify remembered facts; the repo and the running system decide |

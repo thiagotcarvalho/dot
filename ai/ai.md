@@ -173,7 +173,7 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 ### Installed Skills
 
-I installed these skills without a change, before the [skills-are-tools](vault_name/brain/rules/skills-are-tools.md) rule. A new install follows that rule.
+I installed these skills without a change, before the [skills-bring-methods](vault_name/brain/rules/skills-bring-methods.md) rule. A new install follows that rule.
 
 [mattpocock/skills](https://github.com/mattpocock/skills)
 
