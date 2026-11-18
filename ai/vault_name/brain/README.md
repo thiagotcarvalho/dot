@@ -46,6 +46,7 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | 4. Build it | [code-style](rules/code-style.md) | Google pyguide; self-documenting names, one case per test, tests assert behavior and never message text |
 | 4. Build it | [flat-is-better-than-nested](rules/flat-is-better-than-nested.md) | Max 1-2 levels of nesting per function; refactor deeper code |
 | 4. Build it | [comments-and-docstrings](rules/comments-and-docstrings.md) | Google pyguide §3.8, minimal, explain why not what |
+| 4. Build it | [authored-skills](rules/authored-skills.md) | Own skills stand alone; an umbrella skill runs them; shared parts in a shared folder; headless agents with `--watch`; core examples |
 | 5. Write it | [writing-style](rules/writing-style.md) | Fewer em-dashes, plain tone, no hard-wrapped prose, TOC on docs |
 | 5. Write it | [simplified-technical-english](rules/simplified-technical-english.md) | ASD-STE100 for all prose: short sentences, active voice, one meaning per word |
 | 5. Write it | [note-properties](rules/note-properties.md) | Every hand-authored brain/spine note carries a controlled YAML block |

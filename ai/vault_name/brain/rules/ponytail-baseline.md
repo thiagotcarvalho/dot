@@ -18,7 +18,7 @@ Simplicity always wins. Write the least code that meets the requirement. The pon
 
 Read the task and the code that it touches first, as [state-the-problem](state-the-problem.md) and [current-state-wins](current-state-wins.md) require. Then use the ponytail ladder to choose the solution.
 
-When a code review is part of the task, add a `ponytail-review` pass for over-engineering. That pass does not find defects, so the adversarial review in [review-before-commit](review-before-commit.md) still runs. When the user asks for a whole-repo audit, use `ponytail-audit`. When the user asks for the list of `ponytail:` markers, use `ponytail-debt`.
+When a code review is part of the task, add a `ponytail-review` pass for over-engineering. For a full review, use the `complete-code-review` skill. It runs this pass beside the adversarial review. The pass does not find defects, so the adversarial review in [review-before-commit](review-before-commit.md) still runs. When the user asks for a whole-repo audit, use `ponytail-audit`. When the user asks for the list of `ponytail:` markers, use `ponytail-debt`.
 
 ## Why
 

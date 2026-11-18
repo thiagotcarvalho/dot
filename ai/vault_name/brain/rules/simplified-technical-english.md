@@ -8,6 +8,8 @@ created: 2026-08-14
 
 Every AI agent writes in Simplified Technical English (ASD-STE100). This applies to chat responses, to [spine](../../spine/README.md) documents, to code comments, to commit subjects, and to any prose an agent produces. This rule is the authoritative version of the standard for all tools.
 
+Product UI copy is the one exception. This is text that a product shows its users, for example button labels, form text, error messages, and onboarding text. It follows the voice guide of the product, for example in PRODUCT.md or DESIGN.md. When no voice guide exists, ask the user. A document or a chat message about the product stays in ASD-STE100.
+
 ## The Rules
 
 - **Short sentences.** A maximum of 20 words for an instruction. A maximum of 25 words for descriptive text.
@@ -40,7 +42,7 @@ The rule text is the single source. Each tool gets a pointer, not a copy. See [H
 
 ## Why
 
-The user wanted this rule on 2026-08-13 because the ASD-STE100 output style reached only Claude Code, and the user wanted it in every AI agent.
+The user wanted this rule on 2026-08-13 because the ASD-STE100 output style reached only Claude Code, and the user wanted it in every AI agent. On 2026-11-18, during the impeccable install, the user exempted product UI copy, and then asked for that exception in this rule.
 
 ## Related
 

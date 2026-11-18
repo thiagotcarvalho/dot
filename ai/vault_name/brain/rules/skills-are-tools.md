@@ -13,7 +13,14 @@ A rule is a standard, and a skill is a tool. A skill must not collide with a rul
 - **Install by copy.** Copy only the skill folders that the work needs into `~/.agents/skills/`. Link each one into `~/.claude/skills/` with a relative link, for example `../../.agents/skills/<name>`. Do not install a plugin or a whole bundle for one skill. A plugin also adds hooks, commands, and other skills.
 - **Trim before first use.** Keep only the text that changes what the agent does: the method, the guardrails, and the trigger description. Cut persona text, marketing, and benchmark claims. Also cut commands for programs that you do not use and sections for work that you do not do.
 - **Check for collisions before first use.** Compare the trimmed skill with each rule in `brain/rules/`. When the skill collides with a rule, change the skill or do not install it. Do not change the rule to fit the skill. Do not add a clause that ranks the rule above the skill.
-- **Own the copy.** An update through `npx skills update` or a plugin update replaces a managed copy and brings the fluff back. An owned copy changes only when the user decides. For an upgrade, compare the new upstream version with the owned copy. Take only the changes that matter.
+- **Check what the skill runs before first use.** Read the upstream README and source for this, not only `SKILL.md`. List these items:
+  - each executable that it downloads;
+  - each network call, including telemetry;
+  - each hook that it installs;
+  - each file that it writes outside its own folder.
+
+  Check each item against the private-data rule, [explicit-go-for-outward-actions](explicit-go-for-outward-actions.md), and [vault-is-not-a-repo](vault-is-not-a-repo.md), like any other collision.
+- **Own the copy.** An update through `npx skills update` or a plugin update replaces a managed copy and brings the fluff back. An owned copy changes only when the user decides. For an upgrade, compare the new upstream version with the owned copy. Take only the changes that matter. Run the collision check and the runtime check again for each upgrade.
 - **Use `find-skills` to find, not to install.** `find-skills` installs with `npx skills add ... -g -y`, which skips the trim and the collision check. Install the result by copy.
 - **Keep a team skill linked.** A skill from a repo that the user's team owns stays connected to that repo, through a link or a plugin. The trim step does not apply to it. When a team skill collides with a rule, fix the skill in its team repo, not in a local copy. Change a team repo only when the user tells you to.
 - **Apply at each new install and each upgrade.** An existing install that does not follow this rule stays as it is until its next upgrade. Do not upgrade it with `npx skills update` or `git pull`. Replace it with an owned copy of the new version. Use the upgrade steps in [How to Apply](#how-to-apply).
@@ -26,7 +33,7 @@ To install a skill, do these steps:
 1. Create a queue task for the skill.
 2. Copy the original upstream files to `~/.cache/<task-id>/`. A later upgrade compares against them.
 3. Trim the copy in `~/.agents/skills/`.
-4. Check the copy against the rules.
+4. Check the copy against the rules, and check what it runs.
 5. Link the copy into `~/.claude/skills/`.
 6. Record the upstream source and version in the task.
 
@@ -47,7 +54,7 @@ To remove a skill, do these steps:
 
 ## Why
 
-The user wanted this rule because installed skills brought fluff and collided with the brain rules, on 2026-10-07. A rule is a standard, and a skill is a tool, so there should be no collision between them.
+The user wanted this rule because installed skills brought fluff and collided with the brain rules, on 2026-10-07. A rule is a standard, and a skill is a tool, so there should be no collision between them. On 2026-11-18, the impeccable install showed that a skill can download an engine and send telemetry with no word about it in `SKILL.md`, so the user asked for the runtime check.
 
 ## Related
 

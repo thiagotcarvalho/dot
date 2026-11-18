@@ -34,9 +34,9 @@ One ladder. It matches the ladder that `requesting-code-review` uses, so the two
 
 **Important.** A logic defect that changes behaviour. A missing validation with no upstream cover. A lost exception chain. A mutable default argument. A blocking call inside `async def`.
 
-**Minor.** A missing type hint. A magic number. A name that shadows a builtin. Each finding from the `review-names-and-comments` skill.
+**Minor.** A missing type hint. A magic number. A name that shadows a builtin.
 
-**Observation.** Everything in the "Observations, Not Defects" section of `SKILL.md`, plus any suggestion that asks for a new module, a new dependency, or an abstraction that does not exist yet. An observation never enters the actionable count, and it never affects the verdict.
+**Observation.** Everything in the "Observations, Not Defects" section of [checklist.md](checklist.md), plus any suggestion that asks for a new module, a new dependency, or an abstraction that does not exist yet. An observation never enters the actionable count, and it never affects the verdict.
 
 ## Never Report
 
@@ -82,6 +82,6 @@ A clean verdict is not permission to commit. Only the user authorises a commit, 
 2. Confirm that each finding points at a line that proves the problem.
 3. Ask whether a domain expert would call it a defect, or a preference.
 4. Ask whether the fix delivers real value, or busywork.
-5. On a re-review, verify the previous fixes only. Never introduce new findings.
+5. On a re-review, verify the previous fixes. Report a new finding only in the lines that the fix delta changes.
 
 When a finding still feels uncertain, drop it, or state it as a question instead of a defect.

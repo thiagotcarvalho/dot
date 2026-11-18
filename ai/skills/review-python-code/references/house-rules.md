@@ -1,6 +1,6 @@
 # House Rules
 
-`~/Developer/vault_name/brain/rules/` holds the authoritative version of everything below. This file restates the substance, so a reviewer needs no second file. When the two disagree, the rules win, and this file needs an update. The [review-names-and-comments](../../review-names-and-comments/SKILL.md) skill covers names, comments, docstrings, and tests.
+`brain/rules/` holds the authoritative version of everything below. This file restates the substance, so a reviewer needs no second file. When the two disagree, the rules win, and this file needs an update. Names, comments, docstrings, and tests are out of scope for this review.
 
 ## Duplicated Knowledge
 

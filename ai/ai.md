@@ -133,8 +133,11 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 [adversarial-code-review](skills/adversarial-code-review/SKILL.md)
 
-- A second agent reviews local changes, read-only, in a herdr pane. GPT-6.1 Sol is the default reviewer. When 60% or more of the Codex 5-hour window is used, the review moves to a Claude model, unless the user names a Codex model and confirms it.
-- The reviewer pane opens to the right on a landscape monitor and below on a portrait monitor. [split-direction.js](skills/adversarial-code-review/scripts/split-direction.js) finds the monitor of the Ghostty window that runs herdr. It needs the macOS Automation permission for Ghostty and System Events, and the Accessibility permission.
+- A second agent reviews local changes, read-only. It runs headless by default. With `--watch`, it runs in a herdr pane. GPT-6.1 Sol is the default reviewer. When 60% or more of the Codex 5-hour window is used, the review moves to a Claude model, unless the user names a Codex model and confirms it.
+
+[complete-code-review](skills/complete-code-review/SKILL.md)
+
+- It runs adversarial-code-review, review-python-code, review-names-and-comments, and a ponytail-review pass for over-engineering on one diff at the same time. It merges the findings into one report, with the ponytail cuts apart from the defects. Only one reviewer uses Codex at a time.
 
 [frankenstein](skills/frankenstein/SKILL.md)
 
@@ -144,9 +147,14 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 - `/recap` summarizes the most recent work of the session in one paragraph.
 
+[review-common](skills/review-common/README.md)
+
+- This folder is not a skill. It holds the parts that the three review skills share: the reviewer selection, and [review_agent.py](skills/review-common/scripts/review_agent.py), which starts a headless or watched reviewer.
+- A watched reviewer pane opens to the right on a landscape monitor and below on a portrait monitor. [split-direction.js](skills/review-common/scripts/split-direction.js) finds the monitor of the Ghostty window that runs herdr. It needs the macOS Automation permission for Ghostty and System Events, and the Accessibility permission.
+
 [review-names-and-comments](skills/review-names-and-comments/SKILL.md)
 
-- It reviews names, comments, docstrings, and test names against the rules in the vault. The review-python-code skill uses it for those checks.
+- A second agent reviews names, comments, docstrings, and test names against the rules in the vault. The author then fixes the findings. It runs headless by default, and in a herdr pane with `--watch`.
 
 ### Altered Skills
 
@@ -161,6 +169,7 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 [review-python-code](skills/review-python-code/SKILL.md)
 
 - It adapts `python-code-review` and `review-verification-protocol` from [beagle](https://github.com/existential-birds/beagle) by Existential Birds, LLC, under the [Apache-2.0 license](skills/licenses/beagle-LICENSE.txt). I changed it to follow my house rules.
+- A second agent runs the review, headless by default, and in a herdr pane with `--watch`. Names and comments are not part of this review.
 
 ### Installed Skills
 
