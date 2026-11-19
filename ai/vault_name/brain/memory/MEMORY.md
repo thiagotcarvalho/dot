@@ -34,6 +34,7 @@ Auto-loaded every session. This is the index of the [brain](../README.md): **rul
 - [PR reviews to terminal](../rules/pr-reviews-to-terminal.md) — deliver reviews in chat, not a saved file
 - [Git conventions](../rules/git-conventions.md) — never commit/push; no AI attribution; ≤50-char subjects; no commit body; name each new worktree `<repo>-wt-<topic>`
 - [Pull request size](../rules/pull-request-size.md) — at most 400 lines of new code per PR (tests count; deletions, docs, and config do not); a stack holds at most 10 PRs, tells one story, and never deletes or rewrites its own code
+- [Write on the user's behalf](../rules/write-on-the-users-behalf.md) — reply in the thread, or quote and tag the engineer; a general comment only to clarify the PR; first person; linked short SHAs; times in ET
 
 ## Memory
 > Learned facts
