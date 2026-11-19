@@ -43,7 +43,7 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | 3. Design it | [solid-principles](rules/solid-principles.md) | One reason to change; extend without edits; a port where a fake or a second adapter exists |
 | 3. Design it | [guarded-writes](rules/guarded-writes.md) | Dry run first; write only a proven change to exactly one target |
 | 4. Build it | [ponytail-baseline](rules/ponytail-baseline.md) | Write code through the ponytail skill; simplicity always wins |
-| 4. Build it | [code-style](rules/code-style.md) | Google pyguide; self-documenting names, one case per test, tests assert behavior and never message text |
+| 4. Build it | [code-style](rules/code-style.md) | Google pyguide; self-documenting names, one case per test, tests assert behavior or a stable marker and never displayed text |
 | 4. Build it | [flat-is-better-than-nested](rules/flat-is-better-than-nested.md) | Max 1-2 levels of nesting per function; refactor deeper code |
 | 4. Build it | [comments-and-docstrings](rules/comments-and-docstrings.md) | Google pyguide §3.8, minimal, explain why not what |
 | 4. Build it | [authored-skills](rules/authored-skills.md) | Own skills stand alone; an umbrella skill runs them; shared parts in a shared folder; headless agents with `--watch`; core examples |

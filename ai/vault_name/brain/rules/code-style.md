@@ -17,7 +17,7 @@ How agents write code, following the [Google Python style guide](https://google.
 - **Short names, not sentences.** A name identifies; it does not explain. `test_duplicate_order_note`, not `test_duplicate_order_note_is_the_discount_rule_alone_while_discount_never_stacks`. This is the counterweight to the rule above: no uncommon abbreviations, and no paragraphs either. Where a name cannot carry the reasoning, put one brief sentence in the docstring, which is also the only place that reasoning survives a rename.
 - **Names take no articles.** Do not put `a`, `an`, or `the` in a variable, function, method, or test name. An article adds no information. It makes the name longer. Write `parse_order`, not `parse_the_order`. Write `test_duplicate_order`, not `test_the_duplicate_order`.
 - Tests are specific and tackle a single case each. One test must not handle multiple scenarios.
-- **A test proves behavior, not message text.** Assert the outcome, such as the error type, the returned value, or the state. Never match the text of an error or log message.
+- **A test proves behavior, not text.** Assert the outcome, such as the error type, the returned value, the state, or a stable marker in the markup (an `id` or a `data-*` attribute). Never match displayed text: an error or log message, UI copy, a heading, or an empty-state message.
 - **A test proves behavior that exists.** Do not write a test that confirms that removed functionality is gone.
 - No comments referencing a specific ticket (e.g. `PROJ-1203`). `git blame` carries that attribution.
 - Keep functions flat: a maximum of 1 to 2 levels of nesting. See [flat-is-better-than-nested](flat-is-better-than-nested.md).
@@ -26,7 +26,7 @@ How agents write code, following the [Google Python style guide](https://google.
 
 ## Why
 
-The user wanted the text-comparison bullet because a case-sensitive compare silently missed rows on 2026-07-28. The user wanted the message-text bullet because a test that matched an error message failed when only the wording changed, on 2026-10-28. The user wanted the removal bullet because a test that confirms an absence is a waste, on 2026-11-04.
+The user wanted the text-comparison bullet because a case-sensitive compare silently missed rows on 2026-07-28. The user wanted the test-text bullet because a test that matched an error message failed when only the wording changed, on 2026-10-28, and widened it to all displayed text, with stable markers in its place, on 2026-11-19. The user wanted the removal bullet because a test that confirms an absence is a waste, on 2026-11-04.
 
 ## Related
 

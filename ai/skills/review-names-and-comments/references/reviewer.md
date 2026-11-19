@@ -11,7 +11,7 @@ holds no copy of them. Read each file below in full before the review.
 | Target | Rule files |
 |---|---|
 | Names of variables, functions, methods, classes, and tests | `code-style.md` |
-| Test bodies: one case, behavior and not message text, no test for removed behavior | `code-style.md` |
+| Test bodies: one case, behavior or a stable marker and never displayed text, no test for removed behavior | `code-style.md` |
 | Comments and docstrings | `comments-and-docstrings.md`, `simplified-technical-english.md` (the English inside them), `writing-style.md` (the bullet about removed things), `vault-is-not-a-repo.md` |
 
 ## Scope Rules
