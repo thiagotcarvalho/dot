@@ -28,7 +28,7 @@ Before you call a change verified, answer these questions:
 
 If no check ran on the target, the change is not verified. Report it as built and checked locally. Name the remaining check.
 
-The repo gate in [git-conventions](git-conventions.md) and the review in [review-before-commit](review-before-commit.md) come before a commit. They are necessary, but they do not prove a claim about the production host.
+The repo gate and the review in [review-before-commit](review-before-commit.md) come before a commit. They are necessary, but they do not prove a claim about the production host.
 
 ## Related
 
