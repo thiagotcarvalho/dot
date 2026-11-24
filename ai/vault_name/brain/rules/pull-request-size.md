@@ -12,22 +12,23 @@ A reviewer must understand the business context and the code of each pull reques
 
 ### Size
 
-- **A pull request adds at most 400 lines of new code.** Count the added lines of source code and of tests. When a change adds more, split it into separate pull requests, or make a stack.
+- **A pull request adds at most 750 lines of new code.** Count the added lines of source code and of tests. A pull request can be larger only when the user keeps a larger topic whole.
+- **One topic goes in one pull request.** Keep a change in a single pull request, also when the work has several parts. Split a change into several pull requests only when its parts have different topics. A story of more than 5 topics is the one exception, as the Stacks section states.
 - **Some lines do not count.** Deleted lines do not count. Docs, config files, generated files, lockfiles, vendored code, and bulk data files that a script produced do not count.
 - **A mechanical pull request has no size limit.** A file move, a formatter run, or a rename by a tool can have any size. That pull request holds no other change.
-- **The user approves each exception.** A pull request above the limit states why it cannot split. The user approves the exception before the pull request opens.
-- **Plan the split before you write code.** For a change with several pull requests, list each pull request, its step in the story, and its size estimate. Put the list in the plan of the scope.
+- **Ask before you split a large change.** When one topic adds more than 750 lines, ask the user whether to split it. Split it only when the user says so. Otherwise it stays one pull request.
+- **Plan the pull requests before you write code.** List each topic, its pull request, and its size estimate. Put the list in the plan of the scope.
 
 ### Each Pull Request
 
-- **Refactors and moves go in their own pull request.** A pull request that changes behavior does not also refactor or move code.
+- **A refactor or a move is a different topic.** A pull request that changes behavior does not also refactor or move code. The refactor or the move goes in its own pull request.
 - **New code merges with its first caller.** A new function or API is in the same pull request as the first code that uses it.
 - **No pull request uses a temporary shim.** A shim is temporary code that keeps the checks green until a later pull request removes it. Each pull request passes the repo checks on its own, without a shim. When a pull request needs a shim, it is not ready. Change the order or the boundaries of the pull requests.
 
 ### Stacks
 
-- **A stack tells one story.** Each pull request in the stack is one step of that story. A reviewer reads the stack from the bottom to the top. Each step makes sense without the steps above it.
-- **A stack holds at most 10 pull requests.** When a story needs more steps, split it into several stacks of at most 10 pull requests. Open each later stack after the stack before it merges.
+- **A stack holds different topics that depend on each other.** One topic is one pull request, not a stack. A stack tells one story. Each pull request in it is one topic. A story of more than 5 topics is the one exception. A reviewer reads the stack from the bottom to the top. Each pull request makes sense without the pull requests above it.
+- **A stack holds at most 5 pull requests.** Prefer a smaller stack of larger pull requests to a larger stack of smaller pull requests. When a story has more than 5 topics, combine the closest topics into one pull request. Do not combine a refactor or a move with another topic. Keep each combined pull request at 750 lines or fewer. Split the story into several stacks only when that is not enough. Open each later stack after the stack before it merges.
 - **A stack does not delete or rewrite its own code.** No pull request in a stack deletes or rewrites code that an earlier pull request in the same stack added. That code is wasted work for the author and for the reviewer. Write each line in its final form in the pull request that adds it.
 - **A stack does not improve code that it deletes.** When a stack removes a line or a piece of logic, no earlier pull request in the stack optimizes that line or that logic first.
 
@@ -51,7 +52,7 @@ For a pull request in a stack, `<base>` is the branch directly below it. Each ou
 
 Decide the role of each file from its content and its place in the repo. The file extension does not decide the role, because a YAML or JSON file can hold test cases. A file of business rules is a config file.
 
-Add the insertions of the source files and the test files. Git counts a changed line as one deletion and one insertion, so a changed line counts once. When the sum is more than 400, split the change before you write the description. A mechanical pull request and an approved exception do not split.
+Add the insertions of the source files and the test files. Git counts a changed line as one deletion and one insertion, so a changed line counts once. When the sum is more than 750, ask the user whether to split the change before you write the description. A mechanical pull request does not split.
 
 ### Check the Stack
 
@@ -74,7 +75,7 @@ Put the reasoning in the description itself. Do not cite a vault note, per [vaul
 
 ## Why
 
-The user wanted this rule because AI-written pull requests became too large for a careful human review, on 2026-10-09. The user wanted the short description rules because the descriptions of a stack grew long, with sections that the template did not ask for, on 2026-10-27.
+The user wanted this rule because AI-written pull requests became too large for a careful human review, on 2026-10-09. The user wanted the short description rules because the descriptions of a stack grew long, with sections that the template did not ask for, on 2026-10-27. The user raised the limit to 750 lines and asked for one pull request for each topic, with a question before any split, on 2026-11-24. The user lowered the stack limit to 5 pull requests because a longer stack is too much to review, on 2026-11-24.
 
 ## Related
 

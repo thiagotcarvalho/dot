@@ -54,7 +54,7 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | 6. Prove it | [review-before-commit](rules/review-before-commit.md) | Adversarial review by another agent gates every commit |
 | 6. Prove it | [pr-reviews-to-terminal](rules/pr-reviews-to-terminal.md) | Deliver reviews in chat, never as a saved file |
 | 7. Hand it off | [git-conventions](rules/git-conventions.md) | Never commit/push; no AI attribution; short subjects; `<repo>-wt-<topic>` worktrees |
-| 7. Hand it off | [pull-request-size](rules/pull-request-size.md) | At most 400 new lines per PR; a stack holds at most 10 PRs and tells one story; a short description in the template's sections |
+| 7. Hand it off | [pull-request-size](rules/pull-request-size.md) | At most 750 new lines per PR; one topic is one PR, except when a story has more than 5 topics; a larger topic splits only after the user agrees; a stack holds at most 5 PRs and prefers fewer, larger PRs; a short description in the template's sections |
 | 7. Hand it off | [write-on-the-users-behalf](rules/write-on-the-users-behalf.md) | Reply in the thread, or quote and tag; a general comment only to clarify the PR; first person; times in ET |
 
 A rule can end with a Why section. It has one or two sentences in this shape: "The user wanted this rule because <reason> on <date>." When only one bullet has a recorded reason, name that bullet in place of "this rule". Put incident detail in the task records and the spine, not in the rule.
