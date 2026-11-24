@@ -66,8 +66,6 @@ brew "zsh-syntax-highlighting"
 cask "arc"
 # Anthropic's official Claude AI desktop app
 cask "claude"
-# Write, edit, and chat about your code with AI
-cask "cursor"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Tool to prevent the system from going into sleep mode
@@ -84,9 +82,8 @@ cask "shottr"
 cask "spotify"
 # General-purpose text editor
 cask "textmate"
-vscode "anysphere.cursorpyright"
-vscode "anysphere.remote-containers"
-vscode "anysphere.remote-ssh"
+# Open-source code editor
+cask "visual-studio-code"
 vscode "davidanson.vscode-markdownlint"
 vscode "eamodio.gitlens"
 vscode "mechatroner.rainbow-csv"
@@ -94,6 +91,9 @@ vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
 vscode "vscodevim.vim"
 uv "trafilatura"
 npm "@earendil-works/pi-coding-agent"

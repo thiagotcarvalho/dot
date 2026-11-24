@@ -7,9 +7,9 @@ This repo holds my config files and lists the apps that I use every day.
 | Category | What it Holds |
 | --- | --- |
 | [ai](ai/ai.md) | The doc lists my AI coding agents (omp, Claude Code, and Codex) and the herdr terminal workspace. The folder holds their config files, my skills and rules, and a template of an Obsidian vault. |
-| [cursor](cursor/cursor.md) | The folder holds the settings of Cursor, my code editor. The doc links to my extensions. |
 | [macos](macos/macos.md) | The doc lists the macOS apps that I use every day, and some alternatives to them. |
 | [shell](shell/shell.md) | The folder holds the config files of zsh, powerlevel10k, tmux, Ghostty, and LazyVim. The doc also lists oh-my-zsh and command-line tools such as bat, eza, fzf, and zoxide. |
+| [vscode](vscode/vscode.md) | The folder holds the settings of VS Code, my code editor. The doc links to my extensions. |
 
 ## How the Categories Work
 

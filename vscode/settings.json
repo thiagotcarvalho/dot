@@ -1,15 +1,20 @@
 {
     "window.autoDetectColorScheme": true,
-    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "workbench.activityBar.location": "top",
+    "chat.disableAIFeatures": true,
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.detectWorktrees": true,
     "git.openRepositoryInParentFolders": "always",
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
+    "python.analysis.autoImportCompletions": true,
     "[python]": {
         "editor.rulers": [
             100
-        ]
+        ],
+        "editor.quickSuggestions": {
+            "strings": "on"
+        }
     }
 }
