@@ -137,7 +137,8 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 [complete-code-review](skills/complete-code-review/SKILL.md)
 
-- It runs adversarial-code-review, review-python-code, review-names-and-comments, and a ponytail-review pass for over-engineering on one diff at the same time. It merges the findings into one report, with the ponytail cuts apart from the defects. Only one reviewer uses Codex at a time.
+- It runs adversarial-code-review, review-python-code, review-names-and-comments, a ponytail-review pass for over-engineering, and a security-review pass for exploitable vulnerabilities on one diff at the same time. It merges the findings into one report, with the ponytail cuts apart from the defects. Only one reviewer uses Codex at a time.
+- The security pass needs [security-review](https://github.com/getsentry/skills/tree/main/skills/security-review) from getsentry/skills, installed by the [skills-bring-methods](vault_name/brain/rules/skills-bring-methods.md) rule.
 
 [frankenstein](skills/frankenstein/SKILL.md)
 

@@ -10,7 +10,7 @@ This rule covers each skill that the user authors in `~/.agents/skills/`. [skill
 
 ## The Rules
 
-- **One skill does one job.** A skill that is not an umbrella skill does not load or run another skill. When a job needs several skills, an umbrella skill runs them. An umbrella skill can also run an installed skill. For example, `complete-code-review` runs `adversarial-code-review`, `review-python-code`, `review-names-and-comments`, and the installed `ponytail-review`. Each part stays usable alone.
+- **One skill does one job.** A skill that is not an umbrella skill does not load or run another skill. When a job needs several skills, an umbrella skill runs them. An umbrella skill can also run an installed skill. For example, `complete-code-review` runs `adversarial-code-review`, `review-python-code`, `review-names-and-comments`, and the installed `ponytail-review` and `security-review`. Each part stays usable alone.
 - **An umbrella skill passes its inputs.** It names the inputs that it gives each part, for example one work directory and one diff. Each part says that it accepts these inputs.
 - **Shared parts live in a shared folder.** Code or text that several skills use goes in a folder in `~/.agents/skills/` that is not a skill and has no `SKILL.md`, for example `review-common/`. Apply these rules:
   - In a command, refer to the folder by its full path, for example `$HOME/.agents/skills/review-common/`.

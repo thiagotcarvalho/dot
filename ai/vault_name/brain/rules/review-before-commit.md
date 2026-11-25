@@ -34,4 +34,4 @@ The user wanted this rule because two review rounds each found a real defect tha
 
 [git-conventions](git-conventions.md) · [explicit-go-for-outward-actions](explicit-go-for-outward-actions.md) · [prove-it-where-it-runs](prove-it-where-it-runs.md) · [pr-reviews-to-terminal](pr-reviews-to-terminal.md)
 
-Skills: `adversarial-code-review` (this rule's review), `complete-code-review` (the adversarial, Python, names-and-comments, and ponytail reviews together), `requesting-code-review`, `receiving-code-review`, and `verification-before-completion` (the superpowers plugin).
+Skills: `adversarial-code-review` (this rule's review), `complete-code-review` (the adversarial, Python, names-and-comments, ponytail, and security reviews together), `requesting-code-review`, `receiving-code-review`, and `verification-before-completion` (the superpowers plugin).

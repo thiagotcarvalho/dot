@@ -1,9 +1,9 @@
 # Reviewer Selection
 
 The review skills `adversarial-code-review`, `review-python-code`, and
-`review-names-and-comments`, and the `ponytail-review` pass of
-`complete-code-review`, select the reviewer with this file. The reviewer is a
-separate agent, never the author.
+`review-names-and-comments`, and the `ponytail-review` and `security-review`
+passes of `complete-code-review`, select the reviewer with this file. The
+reviewer is a separate agent, never the author.
 
 ## Alias Table
 
