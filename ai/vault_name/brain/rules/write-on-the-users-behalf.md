@@ -28,6 +28,8 @@ A general comment is a top-level PR comment that answers nobody.
 
 ### Review Comments
 
+**Do not review a PR that GitHub marks as Draft.** Its author has not asked for a review yet. Review it after the author marks it ready for review.
+
 A review comment that an agent drafts for the user has this shape:
 
 - The first sentence states the fact. Name the code identifier, the file, and the line. Do not start with a label or a headline sentence.
@@ -55,10 +57,11 @@ Check the draft before you ask for the go:
 4. Each commit is a linked short SHA.
 5. Each time is in ET, unless another time zone is necessary.
 6. The review state follows the comments: Request Changes for any comment that is not a nit, and Approve for nits only.
+7. For a review, GitHub does not mark the PR as Draft.
 
 ## Why
 
-The user wanted this rule because a reply to a re-review had no quote and no tag, on 2026-11-19. The review comment shape and the SHA links date from 2026-10-30. The user wanted the review-state bullets because an agent posted Comment reviews that held requests for real changes, on 2026-11-25.
+The user wanted this rule because a reply to a re-review had no quote and no tag, on 2026-11-19. The review comment shape and the SHA links date from 2026-10-30. The user wanted the review-state and Draft rules after an agent posted the wrong review states and reviewed a Draft PR, on 2026-11-25.
 
 ## Related
 
