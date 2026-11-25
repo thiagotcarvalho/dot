@@ -33,9 +33,12 @@ A review comment that an agent drafts for the user has this shape:
 - The first sentence states the fact. Name the code identifier, the file, and the line. Do not start with a label or a headline sentence.
 - The evidence follows in the first person, for example "I reproduced it on [`abc1234`](https://github.com/<owner>/<repo>/commit/<full sha>)" or "In a synthetic run, ...".
 - After a blank line, one sentence gives the proposal: "My suggestion would be to ...". An alternative can follow: "... would also work."
-- A nit starts with `nit: ` in lowercase, and then it has the same shape.
+- A nit starts with `nit: ` in lowercase, and then it has the same shape. A nit is never about something that breaks. A comment about a real break is a normal comment.
 - Do not use "Suggestion:", "Fix:", or "Please". Write prose. Use a code block only when the code itself is the point.
-- The review summary is short and informal, for example "Just a few things" or "A few changes to make".
+- The review summary is short and direct: one or two sentences, for example "Just a few things" or "A few changes to make". The inline comments speak for themselves, so the summary does not repeat, list, or explain them. A point that cannot sit on a diff line goes in a file-level comment on a file in the diff. The user said this on 2026-11-20.
+- **Choose the review state from the comments.** A review with any comment that is not a nit is Request Changes. A review that agrees with the blocking points of another reviewer is also Request Changes. A review with only nits is Approve.
+- An approval with nits has this summary: "A few nits. Up to you if you'd like to address them now or later, but approved."
+- An approval with no comment can have no message. Post it with an empty summary and no thread replies, unless the user asks for text. The user said this on 2026-11-20.
 
 ### Times
 
@@ -51,10 +54,11 @@ Check the draft before you ask for the go:
 3. The text is in the first person.
 4. Each commit is a linked short SHA.
 5. Each time is in ET, unless another time zone is necessary.
+6. The review state follows the comments: Request Changes for any comment that is not a nit, and Approve for nits only.
 
 ## Why
 
-The user wanted this rule because a reply to a re-review had no quote and no tag, on 2026-11-19. The review comment shape and the SHA links date from 2026-10-30.
+The user wanted this rule because a reply to a re-review had no quote and no tag, on 2026-11-19. The review comment shape and the SHA links date from 2026-10-30. The user wanted the review-state bullets because an agent posted Comment reviews that held requests for real changes, on 2026-11-25.
 
 ## Related
 
