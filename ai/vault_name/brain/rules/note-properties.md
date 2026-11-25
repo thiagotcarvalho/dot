@@ -12,7 +12,7 @@ This rule covers `brain/rules/`, `spine/` notes, and the vault root files. It do
 
 - `brain/memory/`, because the memory subsystem manages that frontmatter.
 - `brain/skills/`, because it holds external skill stores, which the vault index excludes.
-- `arms/task-queue/`, because a task file uses its own frontmatter.
+- `task-queue/`, because a task file uses its own frontmatter.
 
 ## The Rule
 

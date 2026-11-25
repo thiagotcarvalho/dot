@@ -13,7 +13,7 @@ Auto-loaded every session. This is the index of the [brain](../README.md): **rul
 - [Vault is not a repo](../rules/vault-is-not-a-repo.md) — personal vault, untracked; never referenced from any repo
 - [Vault file layout](../rules/vault-file-layout.md) — keep images and HTML pages in `diagram/` and code files in `scripts/`; back up before a destructive change, because the vault has no version control
 - [Skills bring methods](../rules/skills-bring-methods.md) — the rules keep authority over each skill; boundaries, process gates, and defaults; a `LOCAL.md` overlay on each installed skill
-- [Work tracking](../rules/work-tracking.md) — the task queue in arms/task-queue is the arms; each task links its context, usually a scope; it replaces per-scope backlog.md
+- [Work tracking](../rules/work-tracking.md) — the task queue in `task-queue/` tracks each unit of work; each task links its context, usually a scope; it replaces per-scope backlog.md
 - [State the problem](../rules/state-the-problem.md) — problem + success criteria before the solution
 - [Current state wins](../rules/current-state-wins.md) — verify remembered facts against the repo and the running system; correct stale notes in place
 - [KISS](../rules/keep-it-simple-stupid.md) — simplest design that works

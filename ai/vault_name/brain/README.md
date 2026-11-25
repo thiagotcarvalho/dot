@@ -6,7 +6,7 @@ created: 2026-07-17
 ---
 # This Is the Brain
 
-How agents *behave*. This is the stable identity layer: the standards agents are held to and the facts they have learned. It is the counterpart to the [spine](../spine/README.md), which is what agents *produce and interact with* (repo/ticket work-product). The arms are the task queue in `arms/task-queue/`, and they do the work.
+How agents *behave*. This is the stable identity layer: the standards agents are held to and the facts they have learned. It is the counterpart to the [spine](../spine/README.md), which is what agents *produce and interact with* (repo/ticket work-product). The task queue in `task-queue/` does the work.
 
 Everything here is plain Markdown so any agent tool can read it. See [How Tools Load the Brain](#how-tools-load-the-brain).
 
@@ -34,7 +34,7 @@ Two boundaries hold at every step. Each outward action waits for an explicit go.
 | Always | [vault-is-not-a-repo](rules/vault-is-not-a-repo.md) | Personal vault, untracked; never referenced from any repo |
 | Always | [vault-file-layout](rules/vault-file-layout.md) | Images and HTML pages in diagram/, code in scripts/; no version control, so back up before a destructive change |
 | Always | [skills-bring-methods](rules/skills-bring-methods.md) | A skill brings a method; the rules keep authority; boundaries, process gates, and defaults; a `LOCAL.md` overlay on each installed skill |
-| 1. Take the work | [work-tracking](rules/work-tracking.md) | The task queue is the arms; each task links its context, usually a scope |
+| 1. Take the work | [work-tracking](rules/work-tracking.md) | The task queue tracks each unit of work; each task links its context, usually a scope |
 | 2. Understand it | [state-the-problem](rules/state-the-problem.md) | State the problem and success criteria before designing the solution |
 | 2. Understand it | [current-state-wins](rules/current-state-wins.md) | Verify remembered facts; the repo and the running system decide |
 | 3. Design it | [keep-it-simple-stupid](rules/keep-it-simple-stupid.md) | Prefer the simplest design that works |
@@ -83,7 +83,7 @@ Three cautions apply:
 
 ## How Tools Load the Brain
 
-The canonical entry point is the vault's [`AGENTS.md`](../AGENTS.md), which points at both bins, the spine, and the arms. Each agent tool needs at most a one-line pointer:
+The canonical entry point is the vault's [`AGENTS.md`](../AGENTS.md), which points at both bins, the spine, and the task queue. Each agent tool needs at most a one-line pointer:
 
 - **Claude Code:** the memory dir `~/.claude/projects/<project>/memory/` is a symlink to `memory/` here, so `MEMORY.md` auto-loads and new auto-saved memories land directly in the brain. `~/Developer/CLAUDE.md` carries a pointer to `rules/` so rules surface every session. The language standard is wired separately, because output styles are injected verbatim and cannot be a read-hop: `~/.claude/settings.json` sets `"outputStyle": "ASD-STE100"` and `~/.claude/output-styles/ASD-STE100.md` defines it, naming [simplified-technical-english](rules/simplified-technical-english.md) as authoritative. A named style with no file in that directory is silently inert.
 - **Codex:** `~/.codex/AGENTS.md` is the global instruction file and carries the pointer. `~/.codex/config.toml` holds no instruction text, so the pointer cannot live there.

@@ -8,9 +8,9 @@ created: 2026-09-10
 
 Every unit of work is tracked in the task queue. The queue is the durable, cross-session record of what work exists, what its status is, and what proves it done. It replaces the per-scope `backlog.md`. Do not use conversation history or model memory as the work ledger.
 
-The task queue is the arms. The spine holds the context of the work in scopes: the problem, the plan, and the open questions. The arms do the work: each task holds the next action, the status, and the evidence.
+The spine holds the context of the work in scopes: the problem, the plan, and the open questions. The task queue holds the work itself: each task holds the next action, the status, and the evidence.
 
-The queue lives in `arms/task-queue/`. Each task is one Markdown file. The folder is the status: `Now`, `Next`, `Waiting`, or `Done`. This rule states the standard.
+The queue lives in `task-queue/`. Each task is one Markdown file. The folder is the status: `Now`, `Next`, `Waiting`, or `Done`. This rule states the standard.
 
 ## The Rules
 
@@ -27,7 +27,7 @@ The queue lives in `arms/task-queue/`. Each task is one Markdown file. The folde
 
 When you accept work, create or update its task first. Link the task to its context and to the repo pull requests. Record the Jira key in the task when one exists. Keep the granular checklist in the task, not in a separate file.
 
-The work moves between the arms and the spine:
+The work moves between the task queue and the spine:
 
 1. Before the work, read the notes that the task links.
 2. During the work, record the evidence and the status in the task.
@@ -39,7 +39,7 @@ The queue does not replace the Discovery and Plan cadence. The queue tracks stat
 
 A task keeps sanitized output only. Never write a secret or a raw record of private data into a task.
 
-The queue lives in the vault at `arms/task-queue/`. A task points out to Jira and to pull requests. A repo never references the queue back. See [vault-is-not-a-repo](vault-is-not-a-repo.md).
+The queue lives in the vault at `task-queue/`. A task points out to Jira and to pull requests. A repo never references the queue back. See [vault-is-not-a-repo](vault-is-not-a-repo.md).
 
 ## Why
 

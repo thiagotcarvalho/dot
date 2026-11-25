@@ -1,6 +1,6 @@
 # Task Queue
 
-This folder is the arms of the vault. It holds one Markdown file for each unit of work. [work-tracking](../../brain/rules/work-tracking.md) states the standard.
+This folder is the task queue of the vault. It holds one Markdown file for each unit of work. [work-tracking](../brain/rules/work-tracking.md) states the standard.
 
 The queue is the source of truth for work across sessions, agents, terminals, pull requests, deployments, or external reviews. Conversation history and model memory provide context, not task status.
 
@@ -11,7 +11,7 @@ The folder that contains a task file is its status:
 - `Waiting` needs a named external event or input.
 - `Done` has every deliverable handed off and verified.
 
-Each task links its context, usually a scope in the [spine](../../spine/README.md). The task itself holds the next action, the status, and the evidence.
+Each task links its context, usually a scope in the [spine](../spine/README.md). The task itself holds the next action, the status, and the evidence.
 
 Each task has a stable ID. Record an external tracker ID only when it maps to one task.
 

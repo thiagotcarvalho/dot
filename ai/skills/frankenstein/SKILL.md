@@ -9,7 +9,7 @@ description: >
 
 # Frankenstein
 
-Assemble the organism. The brain is how agents behave. The spine holds the context of the work. The arms are the task queue in `arms/task-queue/`, and they do the work. All three live in the Obsidian vault at `~/Developer/vault_name`.
+Assemble the organism. The brain is how agents behave. The spine holds the context of the work. The task queue in `task-queue/` holds the status and the evidence of the work. All three live in the Obsidian vault at `~/Developer/vault_name`.
 
 This skill works in any agent and any working directory. Use the absolute paths below. Do not assume that a context file already loaded the vault. A pointer is not the content.
 
@@ -45,16 +45,16 @@ Read a spine scope only when the work names it. A queue task links its context. 
 
 Apply the loaded standards immediately. They are active for the rest of the session, and they outrank your default behavior.
 
-Read the arms before you start work. Run these two queue commands:
+Read the task queue before you start work. Run these two queue commands:
 
 ```
-find ~/Developer/vault_name/arms/task-queue/Now ~/Developer/vault_name/arms/task-queue/Next ~/Developer/vault_name/arms/task-queue/Waiting -name '*.md'
-for d in Now Next Waiting; do echo "$d $(find ~/Developer/vault_name/arms/task-queue/$d -name '*.md' | wc -l | tr -d ' ')"; done
+find ~/Developer/vault_name/task-queue/Now ~/Developer/vault_name/task-queue/Next ~/Developer/vault_name/task-queue/Waiting -name '*.md'
+for d in Now Next Waiting; do echo "$d $(find ~/Developer/vault_name/task-queue/$d -name '*.md' | wc -l | tr -d ' ')"; done
 ```
 
 The first command lists every open task. The `Now`, `Next`, and `Waiting` tasks are the open work. The second command counts the tasks in each folder.
 
-The Arms line of the inventory is a count, not a queue status report. Copy the three counts from the second command. For the count, do not open the task files.
+The Queue line of the inventory is a count, not a queue status report. Copy the three counts from the second command. For the count, do not open the task files.
 
 Read `~/Developer/vault_name/brain/rules/work-tracking.md` before you change the queue or report its status. Before you work a task, read the notes that it links.
 
@@ -64,7 +64,7 @@ Report the inventory in this shape, so the user can see what arrived:
 Brain: I read <N> rule files and indexed <M> memory entries.
 Spine: I read the layout and the cadence.
 Language: ASD-STE100 is active.
-Arms: <A> tasks are in Now, <B> are in Next, and <C> are in Waiting.
+Queue: <A> tasks are in Now, <B> are in Next, and <C> are in Waiting.
 Repo: The work is in <repo>.
 Open conflicts: <one sentence for each open conflict>
 ```

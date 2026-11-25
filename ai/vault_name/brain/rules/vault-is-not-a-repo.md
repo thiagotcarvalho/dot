@@ -10,7 +10,7 @@ created: 2026-08-14
 
 ## The Rule
 
-- **Never reference the vault from inside a repo.** No vault paths (`~/Developer/vault_name/...`, `spine/...`, `brain/...`, `arms/...`) and no wikilinks to vault notes in code, comments, docstrings, tests, fixtures, README or `docs/` content, commit subjects, PR descriptions, GitHub issues, Jira, or Confluence. Every one of those is read by someone who does not have the vault, so the reference is a dead link on arrival and it exposes the user's private workspace layout.
+- **Never reference the vault from inside a repo.** No vault paths (`~/Developer/vault_name/...`, `spine/...`, `brain/...`, `task-queue/...`) and no wikilinks to vault notes in code, comments, docstrings, tests, fixtures, README or `docs/` content, commit subjects, PR descriptions, GitHub issues, Jira, or Confluence. Every one of those is read by someone who does not have the vault, so the reference is a dead link on arrival and it exposes the user's private workspace layout.
 - **The link direction is one-way.** Spine notes cite repo paths, commits, and PR URLs freely. Repo artifacts never cite back.
 - **Do not make it a repo.** Never `git init` it, never add it to another repo's tree, never commit it. Its being untracked is the intent, not an oversight to fix.
 - **Do not run git from inside it.** There is no repo there. Per [git-conventions](git-conventions.md), target a repo explicitly with `git -C <repo-path>`.

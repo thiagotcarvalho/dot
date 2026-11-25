@@ -7,11 +7,11 @@ status: active
 ---
 # This Is the Spine
 
-What agents *produce and interact with*: all agent work-product (plans, architecture, discovery, runbooks, analysis). The counterpart to the [brain](../brain/README.md), which is how agents behave. The task queue in [`arms/task-queue/`](../arms/task-queue/README.md) is the arms. The scopes hold the context, and the arms do the work.
+What agents *produce and interact with*: all agent work-product (plans, architecture, discovery, runbooks, analysis). The counterpart to the [brain](../brain/README.md), which is how agents behave. The [task queue](../task-queue/README.md) keeps the status of the work. The scopes hold the context.
 
-All work-product lives under this `spine/` directory: one subdirectory per repo, plus shared `archive/` and `personal/` areas. Each effort lives in one scope: a ticket directory such as `spine/<repo>/PROJ-123/`, a workstream directory such as `spine/<repo>/<workstream>/`, or the `misc/` directory of a repo. The workspace entry point [`../AGENTS.md`](../AGENTS.md) lists the repos and states the rule against touching them.
+All work-product lives under this `spine/` directory. The first level is the domain, and the second level is one directory for each repo. Each effort lives in one scope: a ticket directory such as `spine/<domain>/<repo>/PROJ-123/`, a workstream directory such as `spine/<domain>/<repo>/<workstream>/`, or the `misc/` directory of a repo. The workspace entry point [`../AGENTS.md`](../AGENTS.md) lists the repos with their spine directories, and it states the rule against touching them.
 
-`archive/` holds cross-repo or non-ticket material not tied to a single repo or ticket. `personal/` is the user's own workspace: do not touch it unless the user asks.
+A domain groups the repos of one client, one team, or one owner, for example `<client>/`, `<team>/`, and `personal/`. `personal/` is the user's own workspace, for non-work files only. Do not touch it unless the user asks.
 
 ## Spine Layout
 
@@ -19,25 +19,26 @@ All work-product lives under this `spine/` directory: one subdirectory per repo,
 vault_name/
 ├── AGENTS.md                 ← canonical entry point
 ├── brain/                    ← how agents behave (rules + memory)
-├── arms/                     ← the arms
-│   └── task-queue/           ← the durable work ledger
-│       └── Now/, Next/, Waiting/, Done/             ← one task file per unit of work
+├── task-queue/               ← the durable work ledger
+│   └── Now/, Next/, Waiting/, Done/                 ← one task file per unit of work
 └── spine/                    ← all agent work-product (this directory)
     ├── README.md             ← this file
-    ├── <repo-name>/          ← one dir per repo worked in (mirrors ~/Developer/<repo-name>)
-    │   ├── <scope>/          ← one dir per ticket or workstream (e.g. PROJ-123, <workstream>)
-    │   │   ├── discovery.md, plan.md                ← the first effort; a later effort adds an <effort>- prefix
-    │   │   ├── open-questions.md                    ← running doc, live for the scope's life
-    │   │   ├── diagram/                             ← the scope's images and HTML pages (.png, .svg, .jpg, .html)
-    │   │   └── scripts/                             ← the scope's code files, such as .sql
-    │   └── misc/             ← non-ticket work for that repo
-    ├── archive/              ← cross-repo / non-ticket material
-    └── personal/             ← the user's own workspace (do not touch)
+    ├── <domain>/             ← one dir per client, team, or owner
+    │   └── <repo-name>/      ← one dir per repo worked in (mirrors ~/Developer/<repo-name>)
+    │       ├── <scope>/      ← one dir per ticket or workstream (e.g. PROJ-123, <workstream>)
+    │       │   ├── discovery.md, plan.md            ← the first effort; a later effort adds an <effort>- prefix
+    │       │   ├── open-questions.md                ← running doc, live for the scope's life
+    │       │   ├── diagram/                         ← the scope's images and HTML pages (.png, .svg, .jpg, .html)
+    │       │   └── scripts/                         ← the scope's code files, such as .sql
+    │       ├── misc/         ← non-ticket work for that repo
+    │       └── archive/      ← finished scopes and old notes of that repo
+    └── personal/             ← the user's own non-work files (do not touch)
 ```
 
-- Each repo touched gets a matching directory under `spine/`.
-- A ticket gets a scope named for its key, for example `PROJ-123/`. A workstream that spans tickets gets a named scope, for example `<workstream>/`. Other work goes in the `misc/` scope, `spine/<repo-name>/misc/`.
-- Create these directories lazily, when the work actually starts.
+- Each repo touched gets a matching directory under its domain, `spine/<domain>/<repo-name>/`. The repo table in [`../AGENTS.md`](../AGENTS.md) names the directory of each repo. A new repo goes in that table first.
+- A ticket gets a scope named for its key, for example `PROJ-123/`. A workstream that spans tickets gets a named scope, for example `<workstream>/`. Other work goes in the `misc/` scope, `spine/<domain>/<repo-name>/misc/`.
+- Each repo directory has an `archive/` directory. A finished scope or an old note of that repo moves there. There is no shared archive at the top of the spine.
+- Create the other directories lazily, when the work actually starts.
 - A scope keeps its images and HTML pages in `diagram/` and its code files in `scripts/`. [vault-file-layout](../brain/rules/vault-file-layout.md) states this, and it says to back up before a destructive change.
 
 ## Rules
@@ -55,7 +56,7 @@ See [code-style](../brain/rules/code-style.md). Prose style is separate and live
 
 ## Ticket/Work Cadence: Discovery → Plan
 
-Every ticket/unit of work moves through two phases, each with its own doc in the scope folder (`<repo-name>/<scope>/`). The first effort in a scope uses `discovery.md` and `plan.md`. Each later effort in the same scope adds its name as a prefix: `<effort>-discovery.md` and `<effort>-plan.md`. When a later effort starts, the first effort keeps its plain names, so no link breaks. An existing file keeps its name, also when the name does not follow this rule.
+Every ticket/unit of work moves through two phases, each with its own doc in the scope folder (`<domain>/<repo-name>/<scope>/`). The first effort in a scope uses `discovery.md` and `plan.md`. Each later effort in the same scope adds its name as a prefix: `<effort>-discovery.md` and `<effort>-plan.md`. When a later effort starts, the first effort keeps its plain names, so no link breaks. An existing file keeps its name, also when the name does not follow this rule.
 
 Every document carries a table of contents so readers can jump around. The cadence has no recap phase. The dated updates of the plan and the evidence in the queue task record the result.
 
@@ -73,9 +74,9 @@ Two parts:
 
 ## Work Tracking and Open Questions
 
-Actionable work lives in the task queue, not in a per-scope file. The queue is the durable, cross-scope ledger at `arms/task-queue/`. It holds one task per unit of work, and the folder (`Now`, `Next`, `Waiting`, `Done`) sets the status. The standard lives in [work-tracking](../brain/rules/work-tracking.md).
+Actionable work lives in the task queue, not in a per-scope file. The queue is the durable, cross-scope ledger at `task-queue/`. It holds one task per unit of work, and the folder (`Now`, `Next`, `Waiting`, `Done`) sets the status. The standard lives in [work-tracking](../brain/rules/work-tracking.md).
 
-The queue is the arms. Each task links its context, which is usually its scope in the spine. Status stays in the task, so a scope note does not copy it.
+Each task links its context, which is usually its scope in the spine. Status stays in the task, so a scope note does not copy it.
 
 Unknowns live in `open-questions.md`, one per scope. This is the running doc that lives for the scope's whole life. A question needs an answer from someone else: a decision, an SME answer, anything that comes from outside the work.
 

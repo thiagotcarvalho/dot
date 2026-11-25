@@ -115,9 +115,9 @@ The vault has three parts. The [frankenstein](skills/frankenstein/SKILL.md) skil
 
 - The spine holds the work-product: plans, discovery notes, and runbooks. Its README gives the layout.
 
-[arms](vault_name/arms/task-queue/README.md)
+[task queue](vault_name/task-queue/README.md)
 
-- The arms hold one task file for each unit of work, in `Now`, `Next`, `Waiting`, and `Done`.
+- The task queue holds one task file for each unit of work, in `Now`, `Next`, `Waiting`, and `Done`.
 
 These copies are generic. My notes, my memory files, and my tasks stay private. The copies use relative Markdown links, so GitHub can show them. Obsidian opens the linked notes too.
 
@@ -141,7 +141,7 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 [frankenstein](skills/frankenstein/SKILL.md)
 
-- It loads the vault: the brain, the spine, and the arms.
+- It loads the vault: the brain, the spine, and the task queue.
 
 [recap](skills/recap/SKILL.md)
 
