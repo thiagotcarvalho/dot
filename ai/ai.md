@@ -156,6 +156,11 @@ All agents read the skills in `~/.agents/skills/`. Claude Code reads them throug
 
 - A second agent reviews names, comments, docstrings, and test names against the rules in the vault. The author then fixes the findings. It runs headless by default, and in a herdr pane with `--watch`.
 
+[watchtower](skills/watchtower/SKILL.md)
+
+- "Watch PR 7" starts a watch on one pull request. A poll script waits with no model tokens. It wakes the agent for a new review or comment by another person, when the pull request closes, or after repeated read failures.
+- The agent checks each comment against the code, drafts the reply and the fix, and waits for a go before each post, commit, or push. It runs in the current session by default, and in a herdr pane with `--watch`.
+
 ### Altered Skills
 
 [ponytail](skills/ponytail/SKILL.md), [ponytail-audit](skills/ponytail-audit/SKILL.md), [ponytail-debt](skills/ponytail-debt/SKILL.md), [ponytail-review](skills/ponytail-review/SKILL.md)
